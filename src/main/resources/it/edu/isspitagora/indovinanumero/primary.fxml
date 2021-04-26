@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.edu.isspitagora.indovinanumero.PrimaryController">
+   <top>
+      <Label text="Indovina il Numero" textFill="#ff281c" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="DejaVu Serif Condensed Bold" size="18.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox fx:id="layoutTentativo" spacing="5.0">
+               <children>
+                  <Button fx:id="btnNuovaPartita" mnemonicParsing="false" onAction="#handleNuovaPartita" text="Avvia Partita" />
+                  <Label text="n° tentativi rimasti:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="textTentativi" editable="false" prefHeight="5.0" prefWidth="150.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="layoutTentativoUtente" spacing="5.0">
+               <children>
+                  <TextField fx:id="textTentativoUtente" onAction="#handleTentativo" />
+                  <Button fx:id="btnAvvioProva" mnemonicParsing="false" onAction="#handleTentativo" text="Prova Ora" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </padding>
+      </VBox>
+   </center>
+   <bottom>
+      <TextArea fx:id="textRisultato" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="Risultato..." BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
